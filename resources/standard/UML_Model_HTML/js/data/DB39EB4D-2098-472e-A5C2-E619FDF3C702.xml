@@ -1,0 +1,13 @@
+tocTab[tocTab.length] = new Array("0.5:1", "", "Railroad", "EARoot/EA5/EA131.htm", "175.png", "15", "0", "", "Logical diagram0","{6B1CED55-51A4-4c21-978B-35F9092CC559}");
+tocTab[tocTab.length] = new Array("0.5:2", "", "Station", "EARoot/EA5/EA133.htm", "175.png", "9", "0", "", "Logical diagram0","{2C45CCE7-B666-43dd-B239-6E71586B04E1}");
+tocTab[tocTab.length] = new Array("0.5:3", "", "e_road_railroad_switch_position", "EARoot/EA5/EA136.htm", "247.png", "E116", "0", "", "Enumeration0","{7B38FC66-AE1D-46eb-977F-06C8C68493CD}");
+tocTab[tocTab.length] = new Array("0.5:4", "", "e_station_platform_segment_side", "EARoot/EA5/EA137.htm", "247.png", "E138", "0", "", "Enumeration0","{EA21D184-0B60-44d3-8288-0B9F483F72E9}");
+tocTab[tocTab.length] = new Array("0.5:5", "", "e_station_type", "EARoot/EA5/EA138.htm", "247.png", "E135", "0", "", "Enumeration0","{45C714B7-9D7E-4e51-9516-36C51903358C}");
+tocTab[tocTab.length] = new Array("0.5:6", "", "«XSDcomplexType» t_road_railroad", "EARoot/EA5/EA139.htm", "5.png", "E114", "0", "", "Class0","{93043999-3E26-4809-A94E-9C37F0330067}");
+tocTab[tocTab.length] = new Array("0.5:7", "", "«XSDcomplexType» t_road_railroad_switch", "EARoot/EA5/EA140.htm", "5.png", "E115", "0", "", "Class0","{CE1BA693-0C58-432b-AA2A-5CFC69D6C118}");
+tocTab[tocTab.length] = new Array("0.5:8", "", "«XSDcomplexType» t_road_railroad_switch_mainTrack", "EARoot/EA5/EA141.htm", "5.png", "E117", "0", "", "Class0","{F7C15CED-F52C-4de2-9C5E-7A37B13C579E}");
+tocTab[tocTab.length] = new Array("0.5:9", "", "«XSDcomplexType» t_road_railroad_switch_partner", "EARoot/EA5/EA142.htm", "5.png", "E119", "0", "", "Class0","{E673C6EA-8D10-4d56-8377-AB28C5E76BB6}");
+tocTab[tocTab.length] = new Array("0.5:10", "", "«XSDcomplexType» t_road_railroad_switch_sideTrack", "EARoot/EA5/EA143.htm", "5.png", "E118", "0", "", "Class0","{E6D7E445-D427-4738-A660-0D2AD012139D}");
+tocTab[tocTab.length] = new Array("0.5:11", "", "«XSDcomplexType» t_station", "EARoot/EA5/EA144.htm", "5.png", "E134", "0", "", "Class0","{81F8A358-1170-473e-94CE-FE9312D64756}");
+tocTab[tocTab.length] = new Array("0.5:12", "", "«XSDcomplexType» t_station_platform", "EARoot/EA5/EA145.htm", "5.png", "E136", "0", "", "Class0","{A5095C58-D240-41de-8E17-B298A9582C8B}");
+tocTab[tocTab.length] = new Array("0.5:13", "", "«XSDcomplexType» t_station_platform_segment", "EARoot/EA5/EA146.htm", "5.png", "E137", "0", "", "Class0","{D3E16845-2451-4489-9970-142754FE0C25}");

@@ -1,21 +1,21 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { FaRegCheckCircle, FaRegTimesCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+// import { FaRegCheckCircle, FaRegTimesCircle } from "react-icons/fa";
 import './index.scss';
 
 import Page from '../../component/Page';
 import API from '../../API';
 import {THREE} from '../../util/three'
+import xml2js from 'xml2js'
+import OpenDrive from '../../opendrivejs'
 
-
-export default () => {
-    const [data, setData] = useState([])
+const Scenario = () => {
     const mount = useRef(null)
     const [isAnimating, setAnimating] = useState(true)
     const controls = useRef(null)
 
     useEffect(() => {
         setup()
+        load_opendrive()
     }, [])
 
     function add_light(_scene) {
@@ -95,10 +95,13 @@ export default () => {
         }
 
     }
-    function load_data() {
-        API.get_scenarios()
-            .then(res => {
-            })
+    async function load_opendrive() {
+        const xodr_xml = (await API.get_opendrive_file('Simple_LaneOffset')).replace(/(\r\n|\n|\r)/gm, "");
+
+        const xodr_json = await xml2js.parseStringPromise(xodr_xml, { mergeAttrs: true });
+        let xodr_supported = new OpenDrive(xodr_json)
+
+        console.log(xodr_supported)
     }
 
     useEffect(() => {
@@ -110,8 +113,10 @@ export default () => {
     }, [isAnimating])
 
     return (
-        <Page>
+        <Page className='no-padding'>
             <div className='three-mount' ref={mount} onClick={() => setAnimating(!isAnimating)}> </div>
         </Page>
     )
 }
+
+export default Scenario

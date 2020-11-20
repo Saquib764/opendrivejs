@@ -1,9 +1,9 @@
 
-const get_scenarios = () =>{
-    return fetch('/data.json')
-    .then(res=>res.json())
+const get_opendrive_file = (name) =>{
+    return fetch(`/opendrive/${name}.xodr`)
+    .then(res=>res.text())
 }
 
 export default {
-    get_scenarios
+    get_opendrive_file
 }

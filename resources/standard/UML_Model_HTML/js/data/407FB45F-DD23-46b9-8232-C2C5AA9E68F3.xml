@@ -1,0 +1,13 @@
+tocTab[tocTab.length] = new Array("0.7:1", "", "Controller", "EARoot/EA7/EA184.htm", "175.png", "5", "0", "", "Logical diagram0","{B88092E5-0933-4514-984D-54D2E961692B}");
+tocTab[tocTab.length] = new Array("0.7:2", "", "Signals", "EARoot/EA7/EA186.htm", "175.png", "14", "0", "", "Logical diagram0","{811E8671-D70D-4491-BCD2-F2DC1CDF8E17}");
+tocTab[tocTab.length] = new Array("0.7:3", "", "e_road_signals_signal_reference_elementType", "EARoot/EA7/EA189.htm", "247.png", "E106", "0", "", "Enumeration0","{719D83FA-FFE4-42e5-A475-7D5EEE7035BC}");
+tocTab[tocTab.length] = new Array("0.7:4", "", "«XSDcomplexType» t_controller", "EARoot/EA7/EA190.htm", "5.png", "E120", "0", "", "Class0","{DDB261AF-92D4-4ee5-933A-47AC2CEDD976}");
+tocTab[tocTab.length] = new Array("0.7:5", "", "«XSDcomplexType» t_controller_control", "EARoot/EA7/EA191.htm", "5.png", "E121", "0", "", "Class0","{5C0F0CCE-310D-4b42-BB85-37A16C34DD33}");
+tocTab[tocTab.length] = new Array("0.7:6", "", "«XSDchoice» t_physicalPosition", "EARoot/EA7/EA192.htm", "5.png", "E103", "0", "", "Class0","{9EAE549B-628D-4860-8966-D99152204047}");
+tocTab[tocTab.length] = new Array("0.7:7", "", "«XSDcomplexType» t_road_signals", "EARoot/EA7/EA193.htm", "5.png", "E101", "0", "", "Class0","{F9161BC9-E2E7-4ef5-A824-FD31943C457B}");
+tocTab[tocTab.length] = new Array("0.7:8", "", "«XSDcomplexType» t_road_signals_signal", "EARoot/EA7/EA194.htm", "5.png", "E102", "0", "", "Class0","{12C5DBEE-B8FD-4160-8A28-AD81C5523612}");
+tocTab[tocTab.length] = new Array("0.7:9", "", "«XSDcomplexType» t_road_signals_signal_dependency", "EARoot/EA7/EA195.htm", "5.png", "E104", "0", "", "Class0","{F3F296B6-99BD-4fae-8329-21019BCEE1C8}");
+tocTab[tocTab.length] = new Array("0.7:10", "", "«XSDcomplexType» t_road_signals_signal_positionInertial", "EARoot/EA7/EA196.htm", "5.png", "E108", "0", "", "Class0","{5959AE28-E7BD-4adc-9BEB-E640C3F8647D}");
+tocTab[tocTab.length] = new Array("0.7:11", "", "«XSDcomplexType» t_road_signals_signal_positionRoad", "EARoot/EA7/EA197.htm", "5.png", "E107", "0", "", "Class0","{FF06B769-9259-4723-99AF-FA37683B6E80}");
+tocTab[tocTab.length] = new Array("0.7:12", "", "«XSDcomplexType» t_road_signals_signal_reference", "EARoot/EA7/EA198.htm", "5.png", "E105", "0", "", "Class0","{94E6C990-9D4E-4098-B5F0-D9F08FB442A1}");
+tocTab[tocTab.length] = new Array("0.7:13", "", "«XSDcomplexType» t_road_signals_signalReference", "EARoot/EA7/EA199.htm", "5.png", "E109", "0", "", "Class0","{E2C92A18-3DB3-4fe3-8E7F-47C283A3E6D3}");

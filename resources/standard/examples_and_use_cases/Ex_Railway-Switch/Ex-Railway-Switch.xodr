@@ -1,0 +1,194 @@
+<?xml version="1.0" standalone="yes"?>
+<OpenDRIVE>
+    <header revMajor="1" revMinor="6" name="" version="1.00" date="Thu Oct 31 11:33:12 2019" north="0.0000000000000000e+00" south="3.9525251667299724e-322" east="2.4209216646221081e-322" west="4.9406564584124654e-324">
+    </header>
+    <road name="" length="5.4500000000000000e+01" id="1" junction="-1">
+        <link>
+        </link>
+        <planView>
+            <geometry s="0.0000000000000000e+00" x="0.0000000000000000e+00" y="0.0000000000000000e+00" hdg="0.0000000000000000e+00" length="5.4500000000000000e+01">
+                <line/>
+            </geometry>
+        </planView>
+        <lateralProfile>
+        </lateralProfile>
+        <lanes>
+            <laneOffset s="0.0000000000000000e+00" a="1.7500000000000000e+00" b="0.0000000000000000e+00" c="0.0000000000000000e+00" d="0.0000000000000000e+00"/>
+            <laneSection s="0.0000000000000000e+00">
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <link>
+                        </link>
+                    </lane>
+                </center>
+                <right>
+                    <lane id="-1" type="rail" level="false">
+                        <link>
+                        </link>
+                        <width sOffset="0.0000000000000000e+00" a="3.5000000000000000e+00" b="0.0000000000000000e+00" c="0.0000000000000000e+00" d="0.0000000000000000e+00"/>
+                    </lane>
+                </right>
+            </laneSection>
+        </lanes>
+        <objects>
+        </objects>
+        <signals>
+        </signals>
+        <surface>
+        </surface>
+        <railroad>
+            <switch name="Switch12" id="12" position="dynamic">
+                <mainTrack id="1" s="1.0000000000000000e+01" dir="+"/>
+                <sideTrack id="2" s="0.0000000000000000e+00" dir="+"/>
+                <partner name="Switch32" id="32"/>
+            </switch>
+        </railroad>
+        <userData code="viPartListRailML" value="1">
+            <partRailML s="0.0000000000000000e+00" id="0"/>
+            <partRailML s="1.0000000000000000e+01" id="1"/>
+            <partRailML s="2.0000000000000000e+01" id="2"/>
+        </userData>
+        <userData code="viBaliseList" value="1">
+        </userData>
+        <userData code="viAxleCounterList" value="1">
+        </userData>
+        <userData code="viSpeedLimits" value="1">
+        </userData>
+        <userData code="viCircuitBreakers" value="1">
+        </userData>
+        <userData code="viKilometers" value="1">
+        </userData>
+    </road>
+    <road name="" length="5.4500000000000000e+01" id="3" junction="-1">
+        <link>
+        </link>
+        <planView>
+            <geometry s="0.0000000000000000e+00" x="5.4500000000000000e+01" y="4.5000000000000000e+00" hdg="3.1415926535897931e+00" length="5.4500000000000000e+01">
+                <line/>
+            </geometry>
+        </planView>
+        <elevationProfile>
+            <elevation s="0.0000000000000000e+00" a="0.0000000000000000e+00" b="0.0000000000000000e+00" c="0.0000000000000000e+00" d="0.0000000000000000e+00"/>
+        </elevationProfile>
+        <lateralProfile>
+        </lateralProfile>
+        <lanes>
+            <laneOffset s="0.0000000000000000e+00" a="-1.7500000000000000e+00" b="0.0000000000000000e+00" c="0.0000000000000000e+00" d="0.0000000000000000e+00"/>
+            <laneSection s="0.0000000000000000e+00">
+                <left>
+                    <lane id="1" type="rail" level="false">
+                        <link>
+                        </link>
+                        <width sOffset="0.0000000000000000e+00" a="3.5000000000000000e+00" b="0.0000000000000000e+00" c="0.0000000000000000e+00" d="0.0000000000000000e+00"/>
+                    </lane>
+                </left>
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <link>
+                        </link>
+                    </lane>
+                </center>
+            </laneSection>
+        </lanes>
+        <objects>
+        </objects>
+        <signals>
+        </signals>
+        <surface>
+        </surface>
+        <railroad>
+            <switch name="Switch32" id="32" position="dynamic">
+                <mainTrack id="3" s="1.0000000000000000e+01" dir="+"/>
+                <sideTrack id="2" s="3.4898261533109149e+01" dir="-"/>
+                <partner name="Switch12" id="12"/>
+            </switch>
+        </railroad>
+        <userData code="viPartListRailML" value="1">
+            <partRailML s="0.0000000000000000e+00" id="0"/>
+        </userData>
+        <userData code="viBaliseList" value="1">
+        </userData>
+        <userData code="viAxleCounterList" value="1">
+        </userData>
+        <userData code="viSpeedLimits" value="1">
+        </userData>
+        <userData code="viCircuitBreakers" value="1">
+        </userData>
+        <userData code="viKilometers" value="1">
+        </userData>
+    </road>
+    <road name="" length="3.4898261533109149e+01" id="2" junction="-1">
+        <link>
+        </link>
+        <planView>
+            <geometry s="0.0000000000000000e+00" x="1.0000000000000000e+01" y="0.0000000000000000e+00" hdg="0.0000000000000000e+00" length="1.4622505136806616e+00">
+                <line/>
+            </geometry>
+            <geometry s="1.4622505136806616e+00" x="1.1462250513680662e+01" y="0.0000000000000000e+00" hdg="0.0000000000000000e+00" length="2.9081467908134937e+00">
+                <spiral curvStart="0.0000000000000000e+00" curvEnd="3.3459388069617457e-02"/>
+            </geometry>
+            <geometry s="4.3703973044941549e+00" x="1.4369709005117725e+01" y="4.7154805989420234e-02" hdg="4.8652406017379413e-02" length="2.9081467908132548e+00">
+                <arc curvature="3.3459388069617457e-02"/>
+            </geometry>
+            <geometry s="7.2785440953074101e+00" x="1.7262957430125450e+01" y="3.2957369866197084e-01" hdg="1.4595721805461270e-01" length="2.9081467908134937e+00">
+                 <spiral curvStart="3.3459388069617457e-02" curvEnd="0.0000000000000000e+00"/>
+            </geometry>
+            <geometry s="1.0186690886120903e+01" x="2.0124651479003742e+01" y="8.4556364643541304e-01" hdg="1.9460962407448196e-01" length="1.4524879761125089e+01">
+                <line/>
+            </geometry>
+            <geometry s="2.4711570647245992e+01" x="3.4375348521254018e+01" y="3.6544363536153606e+00" hdg="1.9460962407448168e-01" length="2.9081467907388419e+00">
+                <spiral curvStart="-0.0000000000000000e+00" curvEnd="-3.3459388071329810e-02"/>
+            </geometry>
+            <geometry s="2.7619717437984832e+01" x="3.7237042569983075e+01" y="4.1704263013778080e+00" hdg="1.4595721805586148e-01" length="2.9081467907388632e+00">
+                <arc curvature="-3.3459388071329810e-02"/>
+            </geometry>
+            <geometry s="3.0527864228723693e+01" x="4.0130290994916862e+01" y="4.4528451940142304e+00" hdg="4.8652406016137739e-02" length="2.9081467907388419e+00">
+                 <spiral curvStart="-3.3459388071329810e-02" curvEnd="-0.0000000000000000e+00"/>
+            </geometry>
+            <geometry s="3.3436011019462534e+01" x="4.3037749486353391e+01" y="4.5000000000072555e+00" hdg="-9.9316110890868003e-12" length="1.4622505136466089e+00">
+                <line/>
+            </geometry>
+        </planView>
+        <lateralProfile>
+        </lateralProfile>
+        <lanes>
+            <laneOffset s="0.0000000000000000e+00" a="1.7500000000000000e+00" b="0.0000000000000000e+00" c="0.0000000000000000e+00" d="0.0000000000000000e+00"/>
+            <laneSection s="0.0000000000000000e+00">
+                <center>
+                    <lane id="0" type="none" level="false">
+                        <link>
+                        </link>
+                    </lane>
+                </center>
+                <right>
+                    <lane id="-1" type="rail" level="false">
+                        <link>
+                        </link>
+                        <width sOffset="0.0000000000000000e+00" a="3.5000000000000000e+00" b="0.0000000000000000e+00" c="0.0000000000000000e+00" d="0.0000000000000000e+00"/>
+                    </lane>
+                </right>
+            </laneSection>
+        </lanes>
+        <objects>
+        </objects>
+        <signals>
+        </signals>
+        <surface>
+        </surface>
+        <railroad>
+        </railroad>
+        <userData code="viPartListRailML" value="1">
+            <partRailML s="0.0000000000000000e+00" id="0"/>
+        </userData>
+        <userData code="viBaliseList" value="1">
+        </userData>
+        <userData code="viAxleCounterList" value="1">
+        </userData>
+        <userData code="viSpeedLimits" value="1">
+        </userData>
+        <userData code="viCircuitBreakers" value="1">
+        </userData>
+        <userData code="viKilometers" value="1">
+        </userData>
+    </road>
+</OpenDRIVE>

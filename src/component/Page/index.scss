@@ -1,7 +1,12 @@
-div.motional-page {
+div.openui-page {
     text-align: left;
     display: flex;
     flex-direction: column;
     padding-left: 10px;
     padding-right: 10px;
+
+    &.no-padding {
+    	padding-left: 0;
+    	padding-right: 0;
+    }
 }
