@@ -12,10 +12,10 @@ const Scenario = () => {
     const mount = useRef(null)
     const [isAnimating, setAnimating] = useState(true)
     const controls = useRef(null)
+    const [Scene, setScene] = useState(null)
 
     useEffect(() => {
         setup()
-        load_opendrive()
     }, [])
 
     function add_light(_scene) {
@@ -32,19 +32,35 @@ const Scenario = () => {
         let height = mount.current.clientHeight
         let frameId
 
+        let isMouseDown = false
+
         const scene = new THREE.Scene()
-        const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000)
+        const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 100000)
         const renderer = new THREE.WebGLRenderer({ antialias: true })
         const geometry = new THREE.BoxGeometry(1, 1, 1)
         const material = new THREE.MeshBasicMaterial({ color: 0xff00ff })
         const cube = new THREE.Mesh(geometry, material)
 
-        camera.position.z = 4
+        camera.position.z = 3;
+        camera.position.y = 0;
+        camera.position.x = -5;
+        camera.rotation.z = - Math.PI/2
+        camera.rotation.y = - Math.PI/2
+        window.camera = camera
+
+        const size = 100;
+        const divisions = 100;
+
+        const gridHelper = new THREE.GridHelper( size, divisions );
+        gridHelper.rotation.x = Math.PI/2
+        scene.add( gridHelper );
+
         add_light(scene)
-        scene.add(cube)
+        // scene.add(cube)
         renderer.setClearColor('#ccccff')
         renderer.setSize(width, height)
 
+        setScene(scene)
 
         const renderScene = () => {
           renderer.render(scene, camera)
@@ -58,10 +74,23 @@ const Scenario = () => {
           camera.updateProjectionMatrix()
           renderScene()
         }
+        const handleMousemove = (evt) => {
+          if(!isMouseDown) return
+          camera.position.x += evt.movementY/100
+          camera.position.y += evt.movementX/100
+        }
+        const handleMousedown = (evt) => {
+          isMouseDown = true
+        }
+        const handleMouseup = (evt) => {
+          isMouseDown = false
+        }
+        let theta = 0
     
         const animate = () => {
-          cube.rotation.x += 0.01
-          cube.rotation.y += 0.01
+          // theta += 0.01
+          // let tt = Math.sin(theta)
+          // camera.position.y = 3*Math.sin(tt)
 
           renderScene()
           frameId = window.requestAnimationFrame(animate)
@@ -80,13 +109,20 @@ const Scenario = () => {
 
         mount.current.appendChild(renderer.domElement)
         window.addEventListener('resize', handleResize)
+        window.addEventListener('mousemove', handleMousemove)
+        window.addEventListener('mousedown', handleMousedown)
+        window.addEventListener('mouseup', handleMouseup)
         start()
+        // renderScene()
 
         controls.current = { start, stop }
-        
+
         return () => {
           stop()
           window.removeEventListener('resize', handleResize)
+          window.removeEventListener('mousemove', handleMousemove)
+          window.removeEventListener('mousedown', handleMousedown)
+          window.removeEventListener('mouseup', handleMouseup)
           mount.current.removeChild(renderer.domElement)
 
           scene.remove(cube)
@@ -100,21 +136,17 @@ const Scenario = () => {
 
         const xodr_json = await xml2js.parseStringPromise(xodr_xml, { mergeAttrs: true });
         let xodr_supported = new OpenDrive(xodr_json)
-
-        console.log(xodr_supported)
+        console.log(xodr_supported.road[0].render(Scene))
     }
 
-    useEffect(() => {
-        if (isAnimating) {
-            controls.current.start()
-        } else {
-            controls.current.stop()
-        }
-    }, [isAnimating])
+    useEffect(()=>{
+        if(! Scene) return
+        load_opendrive()
+      }, [Scene])
 
     return (
         <Page className='no-padding'>
-            <div className='three-mount' ref={mount} onClick={() => setAnimating(!isAnimating)}> </div>
+            <div className='three-mount' ref={mount}> </div>
         </Page>
     )
 }

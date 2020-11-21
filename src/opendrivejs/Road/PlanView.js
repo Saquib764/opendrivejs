@@ -1,6 +1,8 @@
+
 class PlanView{
 	constructor(planView){
 		this._planView = planView
+		this.initialized = false
 	}
 	get geometry() {
 		return this.parse_geometry(this._planView.geometry[0])
