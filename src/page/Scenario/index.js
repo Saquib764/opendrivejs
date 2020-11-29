@@ -41,11 +41,11 @@ const Scenario = () => {
         const material = new THREE.MeshBasicMaterial({ color: 0xff00ff })
         const cube = new THREE.Mesh(geometry, material)
 
-        camera.position.z = 3;
+        camera.position.z = 4;
         camera.position.y = 0;
         camera.position.x = -5;
         camera.rotation.z = - Math.PI/2
-        camera.rotation.y = - Math.PI/2
+        camera.rotation.y = - Math.PI/2 + Math.PI/8
         window.camera = camera
 
         const size = 100;
@@ -76,8 +76,8 @@ const Scenario = () => {
         }
         const handleMousemove = (evt) => {
           if(!isMouseDown) return
-          camera.position.x += evt.movementY/100
-          camera.position.y += evt.movementX/100
+          camera.position.x += evt.movementY/50
+          camera.position.y += evt.movementX/50
         }
         const handleMousedown = (evt) => {
           isMouseDown = true
@@ -136,7 +136,10 @@ const Scenario = () => {
 
         const xodr_json = await xml2js.parseStringPromise(xodr_xml, { mergeAttrs: true });
         let xodr_supported = new OpenDrive(xodr_json)
-        console.log(xodr_supported.road[0].render(Scene))
+        xodr_supported.render(THREE, Scene)
+        // xodr_supported.road[0].render(Scene)
+
+        // console.log(xodr_supported.road[0].lanes)
     }
 
     useEffect(()=>{

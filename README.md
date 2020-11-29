@@ -17,5 +17,6 @@
 5. `DONE` Plot simple straight reference line and a basic road in three.js
 6. ` ` Add support for spiral.
 7. `DONE` Add simple camera setting.
-8. ` ` Add simple lane support
+8. `DONE` Add simple lane support, lane with fixed width
+9. `DONE` Convert to TypeScript
  

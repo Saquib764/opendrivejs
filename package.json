@@ -10,11 +10,12 @@
     "react-icons": "^3.11.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
+    "typescript": "^4.1.2",
     "web-vitals": "^0.2.4",
     "xml2js": "^0.4.23"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "rm -rf tsconfig.json && react-scripts start",
     "build": "react-scripts build",
     "deploy": "yarn build && gh-pages -d build",
     "test": "react-scripts test",
