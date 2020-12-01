@@ -17,7 +17,7 @@
   "scripts": {
     "start": "rm -rf tsconfig.json && react-scripts start",
     "build": "react-scripts build",
-    "deploy": "GENERATE_SOURCEMAP=false react-scripts build && firebase deploy  --only hosting:opendrivejs",
+    "deploy": "GENERATE_SOURCEMAP=false react-scripts build && firebase deploy --project doorie-fe2ed --only hosting:opendrivejs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
