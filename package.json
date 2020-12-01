@@ -1,6 +1,6 @@
 {
   "name": "OpenDriveJs",
-  "homepage": "http://opendrive.saquibalam.com",
+  "homepage": "http://opendrivejs.web.app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,7 +17,7 @@
   "scripts": {
     "start": "rm -rf tsconfig.json && react-scripts start",
     "build": "react-scripts build",
-    "deploy": "yarn build && gh-pages -d build",
+    "deploy": "GENERATE_SOURCEMAP=false react-scripts build && firebase deploy  --only hosting:opendrivejs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

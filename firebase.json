@@ -1,0 +1,26 @@
+{
+  "hosting": {
+    "site": "opendrivejs",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "assets/**",
+      "pages/**",
+      "components/**",
+      "layouts/**",
+      "middleware/**",
+      "plugins/**",
+      "store/**",
+      "nuxt.config.json",
+      "package.json"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
