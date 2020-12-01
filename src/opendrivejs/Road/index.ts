@@ -1,7 +1,10 @@
 import * as Util from '../util'
 import PlanView from './PlanView'
+const delta_s = 0.2
 
-let COLOR = ['red', 'green', 'blue', 'gray', 'black']
+let COLOR = ['', 'green', 'red', 'gray']
+// This will remove gradual lane curves, For debugging
+const showRectangleLane = false
 
 interface Lanes{
     laneSection: [LaneSection],
@@ -71,6 +74,8 @@ class Lane {
     roadMark:       [RoadMark]|undefined
 
     _length:        number  = 0
+
+    _parentSection: LaneSection|undefined
     get length() {
         return this._length
     }
@@ -87,7 +92,7 @@ class Lane {
 
     constructor(data:any) {
 		this.id     	= Util.make_integer(data.id, 0)
-		this.type     	= Util.make_string(data.type, '')
+		this.type     	= Util.make_string(data.type, '') 
         this.level      = Util.make_boolean(data.level, this.level)
         if(data.roadMark) {
             this.roadMark   = data.roadMark.map((rm:any)=> new RoadMark(rm))
@@ -112,8 +117,35 @@ class LaneLR extends Lane {
         this.width      = new Width(data.width[0])
     }
     render(THREE:any, scene:any) {
-        let laneWidth = this.width.get_value(0) + 0.01
+        let _delta_s = delta_s
+        let ds = 0.0
+        let i = 0
         let dir = this.id/Math.abs(this.id)
+
+        let laneColor = Util.get_lane_color(this.type)
+        if(!showRectangleLane){
+            while(i<1000 && ds < this.length){
+                i++
+                let startWidth = this.width.get_value(ds)
+                ds += _delta_s
+                let endWidth = this.width.get_value(ds)
+                if(startWidth==0.0 && endWidth == 0.0){
+                    continue
+                }
+                let idOffset = this._parentSection!.get_lane_offset_due_to_id(this.id, ds)
+                // console.log(idOffset)
+                const geometry = new THREE.PlaneGeometry( _delta_s, startWidth );
+
+                geometry.translate(this.start + ds + _delta_s/2, dir*(idOffset + (startWidth+endWidth)/4), 0)
+                const material = new THREE.MeshBasicMaterial( {color: laneColor, side: THREE.DoubleSide} );
+                const plane = new THREE.Mesh( geometry, material );
+
+                scene.add(plane)
+            }
+            return
+        }
+
+        let laneWidth = this.width.get_value(0) + .001
         const geometry = new THREE.PlaneGeometry( this.length, laneWidth );
         geometry.translate(this.start + this.length/2, dir*(this.idOffset + laneWidth/2), 0)
         const material = new THREE.MeshBasicMaterial( {color: COLOR[Math.abs(this.id)], side: THREE.DoubleSide} );
@@ -144,6 +176,22 @@ class LaneSection {
         }
         this._length = length
     }
+    get_lane_offset_due_to_id(id:number, ds:number){
+        let offset = 0.0
+        if(id>0 && this!.left){
+            for(let i=1; i<id; i++) {
+                let l = this!.left!.lane.find(l=> l.id==i)
+                offset += l!.width.get_value(ds)
+            }
+        }
+        if(id<0 && this!.right){
+            for(let i=-1; i>id; i--) {
+                let l = this!.right!.lane.find(l=> l.id==i)
+                offset += l!.width.get_value(ds)
+            }
+        }
+        return offset
+    }
 
     constructor(data:any) {
         this.s              = Util.make_double(data.s, 0)
@@ -151,7 +199,10 @@ class LaneSection {
         if(data.left) {
             this.left       = { lane: data.left[0].lane.map((l:any)=>new LaneLR(l)) }
             this.left.lane.sort((a, b) => a.id - b.id)
-            this.left.lane.map((l) => l.start = this.s)
+            this.left.lane.forEach((l) => {
+                l.start = this.s
+                l._parentSection = this
+            })
             for(let i=1; i<this.left.lane.length; i++) {
                 this.left.lane[i].idOffset = this.left.lane[i-1].width.get_value(0) + this.left.lane[i-1].idOffset
             }
@@ -159,7 +210,10 @@ class LaneSection {
         if(data.right) {
             this.right       = { lane: data.right[0].lane.map((l:any)=>new LaneLR(l)) }
             this.right.lane.sort((a, b) => b.id - a.id)
-            this.right.lane.map((l) => l.start = this.s)
+            this.right.lane.forEach((l) => {
+                l.start = this.s
+                l._parentSection = this
+            })
             for(let i=1; i<this.right.lane.length; i++) {
                 this.right.lane[i].idOffset = this.right.lane[i-1].width.get_value(0) + this.right.lane[i-1].idOffset
             }
