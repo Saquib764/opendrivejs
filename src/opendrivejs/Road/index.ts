@@ -124,19 +124,18 @@ class LaneLR extends Lane {
 
         let laneColor = Util.get_lane_color(this.type)
         if(!showRectangleLane){
-            while(i<1000 && ds < this.length){
+            while(i<100000 && ds < this.length){
                 i++
-                let startWidth = this.width.get_value(ds)
+                let startWidth = this.width.get_value(ds) + 0.01
                 ds += _delta_s
-                let endWidth = this.width.get_value(ds)
+                let endWidth = this.width.get_value(ds) + 0.01
                 if(startWidth==0.0 && endWidth == 0.0){
                     continue
                 }
                 let idOffset = this._parentSection!.get_lane_offset_due_to_id(this.id, ds)
-                // console.log(idOffset)
                 const geometry = new THREE.PlaneGeometry( _delta_s, startWidth );
 
-                geometry.translate(this.start + ds + _delta_s/2, dir*(idOffset + (startWidth+endWidth)/4), 0)
+                geometry.translate(this.start + ds + - _delta_s/2, dir*(idOffset + (startWidth+endWidth)/4), 0)
                 const material = new THREE.MeshBasicMaterial( {color: laneColor, side: THREE.DoubleSide} );
                 const plane = new THREE.Mesh( geometry, material );
 
